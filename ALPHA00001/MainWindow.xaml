@@ -1,0 +1,57 @@
+﻿<Window x:Class="ALPHA00001.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ALPHA00001"
+        mc:Ignorable="d"
+       Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Клиенты">
+                <TabControl>
+                    <TabItem Header="Главная">
+                        <StackPanel>
+                            <Label Content="ФИО:"/>
+                            <TextBox x:Name="ClientsNameTextBox"/>
+                            <Label Content="Адрес:"/>
+                            <TextBox x:Name="ClientsAddressTextBox"/>
+                            <Label Content="Номер телефона:"/>
+                            <TextBox x:Name="ClientsPhoneNumberTextBox"/>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Документы">
+                        <Grid>
+                            <TextBox x:Name="ClientsDocumentTextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="200"/>
+                            <Button Content="Сохранить" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Height="30" Click="SaveButton_Click" Tag="{Binding ElementName=ClientsDocumentTextBox}"/>
+                            <Button Content="Открыть" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="30" Click="OpenButton_Click" Tag="{Binding ElementName=ClientsDocumentTextBox}"/>
+                            <Button Content="Открыть окно" Click="OpenWindow_Click" Margin="116,60,76,78" />
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Поставщики">
+                <TabControl>
+                    <TabItem Header="Главная">
+                        <StackPanel>
+                            <Label Content="ФИО:"/>
+                            <TextBox x:Name="SuppliersNameTextBox"/>
+                            <Label Content="Адрес:"/>
+                            <TextBox x:Name="SuppliersAddressTextBox"/>
+                            <Label Content="Номер телефона:"/>
+                            <TextBox x:Name="SuppliersPhoneNumberTextBox"/>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Документы">
+                        <Grid>
+                            <TextBox x:Name="SuppliersDocumentTextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="200"/>
+                            <Button Content="Сохранить" VerticalAlignment="Top" HorizontalAlignment="Right" Width="111" Height="30" Click="SaveButton_Click" Tag="{Binding ElementName=SuppliersDocumentTextBox}"/>
+                            <Button Content="Открыть" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="111" Height="30" Click="OpenButton_Click" Tag="{Binding ElementName=SuppliersDocumentTextBox}" Margin="0,0,0,78"/>
+                            
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
